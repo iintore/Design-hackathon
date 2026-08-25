@@ -1,64 +1,105 @@
-/**
- * Below are the colors that are used in the app. The colors are defined in the light and dark mode.
- * There are many other ways to style your app. For example, [Nativewind](https://www.nativewind.dev/), [Tamagui](https://tamagui.dev/), [unistyles](https://reactnativeunistyles.vercel.app), etc.
- */
-
-import '@/global.css';
-
 import { Platform } from 'react-native';
 
 export const Colors = {
   light: {
-    text: '#000000',
-    background: '#ffffff',
-    backgroundElement: '#F0F0F3',
-    backgroundSelected: '#E0E1E6',
-    textSecondary: '#60646C',
+    primary: '#4E33D9', // CUI Brand Purple
+    primaryLight: '#F0EEFD', // Light tint of CUI Purple
+    secondaryBrand: '#181236',
+    background: '#F8F9FD', // Off-white cool canvas
+    card: '#FFFFFF',
+    text: '#181829', // Primary text - Dark Charcoal
+    textSecondary: '#334155', // Secondary text - Slate-700
+    textTertiary: '#9BA3AF', // Muted/Placeholder
+    border: '#E8ECF4',
+    
+    // Status
+    success: '#00B074',
+    successLight: '#E6F7F0',
+    successDark: '#008254',
+    
+    warning: '#FF8A00',
+    warningLight: '#FFF5EC',
+    warningDark: '#C46200',
+    
+    danger: '#FF3B30',
+    dangerLight: '#FFEBEB',
+    dangerDark: '#D32F2F',
+    
+    info: '#3B82F6',
+    infoLight: '#EFF6FF',
+    infoDark: '#1D4ED8',
+    
+    // Accents
+    accentPurple: '#7F3DFF',
+    accentPurpleLight: '#F3E8FF',
+    accentTeal: '#00BAC7',
+    accentTealLight: '#E0F7F9',
+    accentGold: '#FFD02C',
+    accentGoldLight: '#FFFBE6',
+    accentPink: '#FF4A8B',
+    accentPinkLight: '#FFEBF2',
   },
   dark: {
-    text: '#ffffff',
-    background: '#000000',
-    backgroundElement: '#212225',
-    backgroundSelected: '#2E3135',
-    textSecondary: '#B0B4BA',
+    primary: '#4E33D9',
+    primaryLight: '#2C2459',
+    secondaryBrand: '#0F0A21',
+    background: '#0F0A21',
+    card: '#181236',
+    text: '#FFFFFF',
+    textSecondary: '#9BA3AF',
+    textTertiary: '#687182',
+    border: '#2C2459',
+    
+    // Status
+    success: '#00B074',
+    successLight: '#163E30',
+    successDark: '#008254',
+    
+    warning: '#FF8A00',
+    warningLight: '#3F2C10',
+    warningDark: '#C46200',
+    
+    danger: '#FF3B30',
+    dangerLight: '#3F1816',
+    dangerDark: '#D32F2F',
+    
+    info: '#3B82F6',
+    infoLight: '#16284F',
+    infoDark: '#1D4ED8',
+    
+    accentPurple: '#7F3DFF',
+    accentPurpleLight: '#2A104E',
+    accentTeal: '#00BAC7',
+    accentTealLight: '#103F42',
+    accentGold: '#FFD02C',
+    accentGoldLight: '#3F3510',
+    accentPink: '#FF4A8B',
+    accentPinkLight: '#3F1A28',
   },
 } as const;
 
-export type ThemeColor = keyof typeof Colors.light & keyof typeof Colors.dark;
+export type ThemeColor = keyof typeof Colors.light;
 
-export const Fonts = Platform.select({
-  ios: {
-    /** iOS `UIFontDescriptorSystemDesignDefault` */
-    sans: 'system-ui',
-    /** iOS `UIFontDescriptorSystemDesignSerif` */
-    serif: 'ui-serif',
-    /** iOS `UIFontDescriptorSystemDesignRounded` */
-    rounded: 'ui-rounded',
-    /** iOS `UIFontDescriptorSystemDesignMonospaced` */
-    mono: 'ui-monospace',
-  },
-  default: {
-    sans: 'normal',
-    serif: 'serif',
-    rounded: 'normal',
-    mono: 'monospace',
-  },
-  web: {
-    sans: 'var(--font-display)',
-    serif: 'var(--font-serif)',
-    rounded: 'var(--font-rounded)',
-    mono: 'var(--font-mono)',
-  },
-});
+export const Fonts = {
+  title: 'PPEditorialNew-Regular',
+  titleItalic: 'PPEditorialNew-Italic',
+  titleBold: 'PPEditorialNew-Ultrabold',
+  body: 'Inter-Regular',
+  bodyBold: 'Inter-Bold',
+  bodyMedium: 'Inter-Medium',
+  sans: 'Inter-Regular',
+  serif: 'PPEditorialNew-Regular',
+};
 
 export const Spacing = {
-  half: 2,
-  one: 4,
-  two: 8,
+  half: 4,
+  one: 8,
+  two: 12,
   three: 16,
   four: 24,
   five: 32,
-  six: 64,
+  six: 48,
+  seven: 64,
 } as const;
 
 export const BottomTabInset = Platform.select({ ios: 50, android: 80 }) ?? 0;
